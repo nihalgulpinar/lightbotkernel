@@ -85,3 +85,15 @@ def lightbot_kernel():
             light_status = "On" if self.light_on else "Off"
             print(f"Bot is at ({self.x}, {self.y}), facing {self.direction}, light is {light_status}.")
             print(f"Current cell height: {self.terrain.grid[self.y][self.x][0]}")
+def last_digit_my_id():
+    terrain = Terrain()  # Create the terrain object
+    bot = Bot(terrain)   # Pass the terrain object to the bot
+    instructions = ">@>^@^@^@^@^@^@<^@^@^@^@^@^@<*^^<^^^@<^@^^@^@^@**"  # Example instructions
+
+    for instruction in instructions:
+        bot.execute_instruction(instruction)  # Execute each instruction
+        terrain.print_grid(bot)                # Print the grid after each instruction
+        print()  # Print a blank line for better readability
+
+if __name__ == "__main__":
+    last_digit_my_id()
